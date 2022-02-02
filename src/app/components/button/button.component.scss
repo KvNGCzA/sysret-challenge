@@ -1,0 +1,30 @@
+@import "src/assets/styles/variables";
+
+.btn {
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &.regular {
+    height: 54px;
+    border-radius: 27px;
+    background-color: $sysret-orange;
+    color: $sysret-white;
+    padding: 0 50px;
+    border: 1px solid $sysret-orange;
+    box-shadow: $sysret-orange-shadow;
+  }
+
+  &.stripped {
+    color: $sysret-orange;
+    background-color: transparent;
+    border: 0;
+  }
+
+  &.display {
+    background-color: $sysret-counter-back;
+    color: $sysret-text;
+    border: 0;
+    padding: 8px 6px;
+    font-weight: normal;
+  }
+}
