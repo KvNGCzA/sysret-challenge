@@ -35,7 +35,6 @@ export class ProductsState {
         error: e => {
           this._error.next(true);
         }
-      })
-
+      });
   }
 }

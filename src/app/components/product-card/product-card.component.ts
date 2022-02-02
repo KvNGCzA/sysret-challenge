@@ -7,7 +7,7 @@ import {Product} from "../../core/model/product.model";
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent {
-  @Input() public product: Product = {} as Product;
+  @Input() public product!: Product;
 
   public get productImage(): string {
     return `../../../assets/images/${this.product?.image}.png`;
