@@ -1,26 +1,11 @@
 <div class="page">
-  <!--  <app-header></app-header>-->
-  <header class="header">
-    <h1>logo</h1>
-    <app-button class="language-button" text="EN" type="display"></app-button>
-  </header>
+  <app-header></app-header>
 
   <h2 class="heading">Drinks before Eating!</h2>
+
+  <div class="product-cards">
+    <app-product-card *ngFor="let product of (productsFacade.products$ | async)" [product]="product"></app-product-card>
+  </div>
+
   <app-footer></app-footer>
 </div>
-
-<!--  <div [style]="{height: '90px', backgroundColor: 'red'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'blue'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'green'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'yellow'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'orange'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'red'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'blue'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'green'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'yellow'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'orange'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'red'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'blue'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'green'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'yellow'}"></div>-->
-<!--  <div [style]="{height: '90px', backgroundColor: 'orange'}"></div>-->

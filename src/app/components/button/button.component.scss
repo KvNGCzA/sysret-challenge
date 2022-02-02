@@ -7,15 +7,15 @@
   &.regular {
     height: 54px;
     border-radius: 27px;
-    background-color: $sysret-orange;
-    color: $sysret-white;
+    background-color: $sysret-secondary;
+    color: $sysret-primary;
     padding: 0 50px;
-    border: 1px solid $sysret-orange;
+    border: 1px solid $sysret-secondary;
     box-shadow: $sysret-orange-shadow;
   }
 
   &.stripped {
-    color: $sysret-orange;
+    color: $sysret-secondary;
     background-color: transparent;
     border: 0;
   }
@@ -26,5 +26,27 @@
     border: 0;
     padding: 8px 6px;
     font-weight: normal;
+  }
+
+  &.round {
+    background-color: $sysret-primary;
+    color: $sysret-volume-text;
+    border: 0;
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+
+    &.secondary {
+      background-color: $sysret-secondary;
+      color: white;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 }

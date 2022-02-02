@@ -1,11 +1,12 @@
-:host {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
 .header {
-  width: 100%;
-  display: flex;
+  position: relative;
+  text-align: center;
+  padding: 22px 25px 38px;
+
+  .language-button {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    font-size: 14px;
+  }
 }

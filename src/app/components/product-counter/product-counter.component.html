@@ -1,0 +1,16 @@
+<div *ngIf="(count$ | async) || '0'  as count" class="product-counter">
+  <app-button
+    (onClick)="onDecrement($event)"
+    [disabled]="disableDecrementButton(count)"
+    [value]="count"
+    text="-"
+    type="round"
+  ></app-button>
+  <div class="counter-value">{{count}}</div>
+  <app-button
+    (onClick)="onIncrement($event)"
+    [value]="count"
+    text="+"
+    type="round secondary"
+  ></app-button>
+</div>

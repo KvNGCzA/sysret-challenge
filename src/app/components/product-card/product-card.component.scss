@@ -1,0 +1,68 @@
+@import "src/assets/styles/variables";
+
+.product-card {
+  width: 100%;
+  background-color: $sysret-primary;
+  box-shadow: $sysret-product-card-shadow;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 26% 45% 29%;
+  align-items: flex-end;
+  padding: 18px;
+
+  .product-image {
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .image {
+      width: auto;
+      height: 90%;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &__background {
+      background: red;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 80%;
+      z-index: 1;
+    }
+  }
+
+  .product-details {
+    padding: 0 8px;
+
+    .sponsored {
+      color: $sysret-sponsored-text;
+      font-size: 10px;
+      font-weight: normal;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 18px;
+
+      .product-volume {
+        color: $sysret-volume-text;
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 6px;
+      }
+    }
+
+    .product-price {
+      color: $sysret-text;
+      font-size: 20px;
+      font-weight: normal;
+    }
+  }
+}

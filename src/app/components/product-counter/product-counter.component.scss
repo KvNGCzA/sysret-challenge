@@ -1,0 +1,11 @@
+@import "src/assets/styles/variables";
+
+.product-counter {
+  background-color: $sysret-counter-back;
+  width: 100%;
+  display: flex;
+  border-radius: 18px;
+  padding: 6px 4px;
+  justify-content: space-around;
+  align-items: center;
+}
