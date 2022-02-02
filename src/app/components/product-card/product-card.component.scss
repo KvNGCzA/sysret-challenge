@@ -1,4 +1,5 @@
 @import "src/assets/styles/variables";
+@import "src/assets/styles/functions";
 
 .product-card {
   width: 100%;
@@ -6,9 +7,10 @@
   box-shadow: $sysret-product-card-shadow;
   border-radius: 8px;
   display: grid;
-  grid-template-columns: 26% 45% 29%;
+  grid-template-columns: 26% 74%;
   align-items: flex-end;
   padding: 18px;
+  height: 110px;
 
   .product-image {
     background-size: contain;
@@ -40,29 +42,47 @@
 
   .product-details {
     padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 
     .sponsored {
       color: $sysret-sponsored-text;
-      font-size: 10px;
+      font-size: rem-calc(10);
       font-weight: normal;
     }
 
-    .product-name {
-      font-weight: bold;
-      margin-bottom: 18px;
+    .product-name-volume {
+      display: flex;
+      align-items: center;
+
+      .product-name {
+        font-weight: 600;
+        max-width: 86%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
 
       .product-volume {
         color: $sysret-volume-text;
-        font-size: 12px;
+        font-size: rem-calc(12);
         font-weight: 500;
         margin-left: 6px;
       }
     }
 
-    .product-price {
-      color: $sysret-text;
-      font-size: 20px;
-      font-weight: normal;
+    .product-price-counter {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      align-items: flex-end;
+
+      .product-price {
+        color: $sysret-text;
+        font-size: rem-calc(20);
+        font-weight: normal;
+      }
     }
   }
 }

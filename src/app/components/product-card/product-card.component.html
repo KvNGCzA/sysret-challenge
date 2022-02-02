@@ -4,13 +4,20 @@
     <img [src]="productImage" alt="product name" class="image" loading="lazy"/>
   </div>
   <div class="product-details">
-    <p *ngIf="product?.isSponsored" class="sponsored">sponsored</p>
-    <p class="product-name">
-      {{product?.name}}
-      <span class="product-volume">{{product?.volume}}</span>
-    </p>
-    <p class="product-price">CHF {{product?.price}}</p>
+    <div>
+      <p *ngIf="product?.isSponsored" class="sponsored">Sponsored</p>
+      <div class="product-name-volume">
+        <p class="product-name">
+          {{product?.name}}
+        </p>
+        <span class="product-volume">{{product?.volume}}</span>
+      </div>
+    </div>
+
+    <div class="product-price-counter">
+      <p class="product-price">CHF {{product?.price}}</p>
+      <app-product-counter class="product-card__counter"></app-product-counter>
+    </div>
   </div>
 
-  <app-product-counter class="product-card__counter"></app-product-counter>
 </div>
