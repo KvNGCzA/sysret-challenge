@@ -4,7 +4,10 @@
   <h1 class="heading">Drinks before Eating!</h1>
 
   <div class="product-cards">
-    <app-product-card *ngFor="let product of (productsFacade.products$ | async)" [product]="product"></app-product-card>
+    <app-product-card
+      *ngFor="let product of (productsFacade.products$ | async)"
+      [product]="product"
+    ></app-product-card>
   </div>
 
   <app-footer></app-footer>

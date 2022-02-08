@@ -7,6 +7,7 @@ export class ProductsFacade {
   public error$ = this._productsState.error$;
   public loading$ = this._productsState.loading$;
   public getProducts = this._productsState.getProducts.bind(this._productsState);
+  public updateCart = this._productsState.updateCart.bind(this._productsState);
 
   constructor(private readonly _productsState: ProductsState) {
   }

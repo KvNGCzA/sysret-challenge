@@ -1,11 +1,19 @@
 import {Injectable} from '@angular/core';
 import {ProductsService} from "../service/products.service";
-import {BehaviorSubject, finalize, take} from "rxjs";
+import {BehaviorSubject, finalize, map, take} from "rxjs";
 import {Product} from "../model/product.model";
+
+interface CartItem {
+  id: number;
+  price: number;
+  quantity: number;
+}
 
 @Injectable({providedIn: 'root'})
 export class ProductsState {
   private readonly _products = new BehaviorSubject<Product[]>([]);
+  private readonly _cart = new BehaviorSubject<Map<number, CartItem>>(new Map());
+  private readonly cart$ = this._cart.asObservable();
   public readonly products$ = this._products.asObservable();
   private readonly _error = new BehaviorSubject<boolean>(false);
   public readonly error$ = this._error.asObservable();
@@ -15,6 +23,18 @@ export class ProductsState {
   constructor(
     private readonly _productsService: ProductsService
   ) {
+    this._cart
+      .pipe(map(cart => {
+        return {
+          cart,
+          total: Array.from(cart.values()).reduce((curr, acc) => curr + acc.price, 0)
+        }
+      }))
+      .subscribe({
+        next: ({cart, total}) => {
+          console.log('cart', cart, total);
+        }
+      })
   }
 
   public getProducts(): void {
@@ -36,5 +56,19 @@ export class ProductsState {
           this._error.next(true);
         }
       });
+  }
+
+  public updateCart = (newItem: CartItem): void => {
+    const cart = this._cart.getValue();
+
+    if (!newItem.quantity) {
+      cart.delete(newItem.id);
+    } else {
+      cart.set(newItem.id, {
+        ...newItem,
+      });
+    }
+
+    this._cart.next(cart);
   }
 }

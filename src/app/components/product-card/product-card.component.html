@@ -16,7 +16,7 @@
 
     <div class="product-price-counter">
       <p class="product-price">CHF {{product?.price}}</p>
-      <app-product-counter class="product-card__counter"></app-product-counter>
+      <app-product-counter class="product-card__counter" (updateCart)="updateProduct($event)"></app-product-counter>
     </div>
   </div>
 
